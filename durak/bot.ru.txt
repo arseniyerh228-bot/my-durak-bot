@@ -1,0 +1,34 @@
+import asyncio
+import logging
+from aiogram import Bot, Dispatcher, types
+from aiogram.filters import Command
+
+logging.basicConfig(level=logging.INFO)
+
+BOT_TOKEN = "8970287476:AAHJRGaco3yZ2OlcOr84K1XIYru6VkKJwpc"
+
+bot = Bot(token=BOT_TOKEN)
+dp = Dispatcher()
+
+@dp.message(Command("start"))
+async def cmd_start(message: types.Message):
+    await message.answer("Привет! Я бот, который работает на Bothost.")
+
+@dp.message(Command("help"))
+async def cmd_help(message: types.Message):
+    await message.answer("Список команд:\n/start - Начать\n/help - Помощь")
+
+@dp.message()
+async def echo(message: types.Message):
+    await message.answer(f"Вы написали: {message.text}")
+
+async def main():
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+
+
+
+
