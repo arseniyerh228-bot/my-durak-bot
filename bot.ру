@@ -5,7 +5,7 @@ from aiogram.filters import Command
 
 logging.basicConfig(level=logging.INFO)
 
-BOT_TOKEN = "8970287476:AAHJRGaco3yZ2OlcOr84K1XIYru6VkKJwpc"
+BOT_TOKEN = "8970287476:AAGezRhnC9HgYh0N6M3Qr-u3oMFO51utEuA"
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
